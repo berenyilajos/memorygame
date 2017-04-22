@@ -21,7 +21,7 @@
 			<li class="right" ><a href="<%= request.getContextPath() %>/logout">Logout</a></li>
 		</ul>
 	</div>
-	<h3>Results (6x6)</h3>
+	<h3>Results (only 6x6)</h3>
 	<% 
 		List<Result> list = (List<Result>) request.getAttribute("list");
 		if (list != null && !list.isEmpty()) {
