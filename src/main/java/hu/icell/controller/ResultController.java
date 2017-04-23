@@ -8,24 +8,19 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import hu.icell.dao.ResultDao;
-import hu.icell.entities.EntitManagerCreator;
-import hu.icell.entities.EntityManagerProducer;
 import hu.icell.entities.Result;
 import hu.icell.entities.User;
 
@@ -33,26 +28,19 @@ import hu.icell.entities.User;
 @RequestMapping(value = "/result")
 public class ResultController {
 	
-    
-	@PersistenceContext(unitName="memorygame")
-	private EntityManager em;
-	
 	@Inject
 	private ResultDao resultDao;
 	
-//	@PersistenceUnit
-//	private EntityManagerFactory entityManagerFactory;
-	
+//	@PersistenceUnit(unitName="memorygame")
 //	private EntityManagerFactory emf;
-//    @Inject
-//    private EntityManager em;
+//  private EntityManager em;
 	
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView listAction(HttpServletRequest request) {
 		
-//		EntityManager em = EntitManagerCreator.getEntityManager();
-//	    EntityManager em = EntityManagerProducer.createEntityManager();
+//      emf = Persistence.createEntityManagerFactory("memorygame");
+//	    em = emf.createEntityManager();
 //	    em.getTransaction().begin();
 //	    Result r = new Result();
 //	    r.setResultDate(Calendar.getInstance().getTime());
