@@ -27,7 +27,7 @@ public class AuthDao {
     }
     
     public User getUserByUsername(String username) {
-        Query q = em.createQuery("SELECT u FROM User u WHERE u.username=:username");
+        Query q = em.createNamedQuery("User.findByUsername");
         q.setParameter("username", username);
         User user = null;
         try {
