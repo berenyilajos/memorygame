@@ -13,10 +13,12 @@ import java.util.Date;
 @Entity
 @Table(name="\"RESULT\"")
 @NamedQuery(name="Result.findAll", query="SELECT r FROM Result r")
+@SequenceGenerator(name = "RESULT_SEQU", sequenceName = "RESULT_SEQU", initialValue = 1, allocationSize = 0)
 public class Result implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RESULT_SEQU")
 	private long id;
 
 	@Temporal(TemporalType.DATE)
