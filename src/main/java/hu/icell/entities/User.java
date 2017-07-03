@@ -15,12 +15,12 @@ import java.util.List;
 	@NamedQuery(name="User.findAll", query="SELECT u FROM User u"),
 	@NamedQuery(name="User.findByUsername", query="SELECT u FROM User u WHERE u.username=:username")
 })
-@SequenceGenerator(name = "USERS_SEQU", sequenceName = "USERS_SEQU", initialValue = 1, allocationSize = 0)
+@SequenceGenerator(name = "USERS_SEQ", sequenceName = "USERS_SEQ", initialValue = 1, allocationSize = 0)
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USERS_SEQU")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USERS_SEQ")
 	private long id;
 
 	private String email;
